@@ -2,6 +2,7 @@ module.exports = {
   "title": "sugarblog",
   "description": "",
   "dest": "public",
+  "base": '/sugarblog/',
   "head": [
     [
       "link",
