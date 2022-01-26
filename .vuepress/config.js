@@ -4,6 +4,8 @@ module.exports = {
   "dest": "public",
   "base": '/sugarblog/',
   "head": [
+    // 移动端优化
+    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
     [
       "link",
       {
@@ -88,7 +90,16 @@ module.exports = {
     "author": "sugarboo",
     "authorAvatar": "/avatar.png",
     // "record": "xxxx",
-    // "startYear": "2017"
+    // "startYear": "2017",
+
+    // vssue评论功能配置
+    vssueConfig: {
+      platform: 'github',
+      owner: 'sugarboo',
+      repo: 'sugarblog',
+      clientId: 'f6ef76ab0d10b5bd8d89',
+      clientSecret: '25d0547b014e46c62566bbfc71f6ab45782387a5',
+    }
   },
   "markdown": {
     "lineNumbers": true

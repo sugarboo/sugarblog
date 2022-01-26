@@ -1,7 +1,7 @@
 ---
 home: true
-heroText: 
-tagline: 
+heroText: null
+tagline: null
 heroImage: /hero.png
 heroImageStyle: {
   maxWidth: '600px',
