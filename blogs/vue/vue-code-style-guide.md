@@ -234,47 +234,47 @@ export default {
 
 **Vue Router Path 命名采用 kebab-case 格式。** 用 Snake（如：`/user_info`）或 camelCase（如：`/userInfo`)的单词会被当成一个单词，搜索引擎无法区分语义。
 ```js
-    // bad
-    {
-      path: '/user_info', // user_info 当成一个单词name: 'UserInfo',
-      component: UserInfo,
-      meta: {
-        title: ' - 用户',
-        desc: ''
-      }
-    },
-    
-    // good
-    {
-      path: '/user-info', // 能解析成 user infoname: 'UserInfo',
-      component: UserInfo,
-      meta: {
-        title: ' - 用户',
-        desc: ''
-      }
-    },
+  // bad
+  {
+    path: '/user_info', // user_info 当成一个单词name: 'UserInfo',
+    component: UserInfo,
+    meta: {
+      title: ' - 用户',
+      desc: ''
+    }
+  },
+  
+  // good
+  {
+    path: '/user-info', // 能解析成 user infoname: 'UserInfo',
+    component: UserInfo,
+    meta: {
+      title: ' - 用户',
+      desc: ''
+    }
+  },
 ```
 
 #### 1.3.4 模板中组件
 
 **对于绝大多数项目来说，在单文件组件和字符串模板中组件名应该总是 PascalCase 的，但是在 DOM 模板中总是 kebab-case 的。**
 ```html
-    <!-- 在单文件组件和字符串模板中 -->
-    <MyComponent/>
+<!-- 在单文件组件和字符串模板中 -->
+<MyComponent/>
 
-    <!-- 在 DOM 模板中 -->
-    <my-component></my-component>
+<!-- 在 DOM 模板中 -->
+<my-component></my-component>
 ```
 
 #### 1.3.5 自闭合组件
 
 **在单文件组件、字符串模板和 JSX 中没有内容的组件应该是自闭合的——但在 DOM 模板里永远不要这样做。**
 ```html
-    <!-- 在单文件组件和字符串模板中 -->
-    <MyComponent/>
+<!-- 在单文件组件和字符串模板中 -->
+<MyComponent/>
 
-    <!-- 在所有地方 -->
-    <my-component></my-component>
+<!-- 在所有地方 -->
+<my-component></my-component>
 ```
 
 #### 1.3.6 变量
@@ -282,20 +282,20 @@ export default {
 - 命名方法：camelCase
 - 命名规范：类型 + 对象描述或属性的方式
 ```js
-    // bad
-    var getTitle = "LoginTable"
-    
-    // good
-    let tableTitle = "LoginTable"
-    let mySchool = "我的学校"
+// bad
+var getTitle = "LoginTable"
+
+// good
+let tableTitle = "LoginTable"
+let mySchool = "我的学校"
 ```
 #### 1.3.7 常量
 
 - 命名方法：全部大写下划线分割
 - 命名规范：使用大写字母和下划线来组合命名，下划线用以分割单词
 ```js
-    const MAX_COUNT = 10
-    const URL = 'http://test.host.com'
+const MAX_COUNT = 10
+const URL = 'http://test.host.com'
 ```
 
 #### 1.3.8 方法
@@ -304,22 +304,22 @@ export default {
 - 命名规范：统一使用动词或者动词 + 名词形式
 
 ```js
-    // 1、普通情况下，使用动词 + 名词形式
-    // bad
-    go、nextPage、show、open、login
-    
-    // good
-    jumpPage、openCarInfoDialog
-    
-    // 2、请求数据方法，以 data 结尾
-    // bad
-    takeData、confirmData、getList、postForm
-    
-    // good
-    getListData、postFormData
-    
-    // 3、单个动词的情况
-    init、refresh
+// 1、普通情况下，使用动词 + 名词形式
+// bad
+go、nextPage、show、open、login
+
+// good
+jumpPage、openCarInfoDialog
+
+// 2、请求数据方法，以 data 结尾
+// bad
+takeData、confirmData、getList、postForm
+
+// good
+getListData、postFormData
+
+// 3、单个动词的情况
+init、refresh
 ```
 
 动词 | 含义 | 返回值
