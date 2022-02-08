@@ -32,5 +32,5 @@ publish: true
 7. LeetCode 算法试题学习
 [LeetCode 算法试题学习](https://leetcode-cn.com/problemset/all)
 
-8. LeetCode 算法试题学习
-[LeetCode 算法试题学习](https://www.nowcoder.com/)
+8. 牛客网
+[牛客网](https://www.nowcoder.com/)
