@@ -103,5 +103,11 @@ module.exports = {
   },
   "markdown": {
     "lineNumbers": true
+  },
+  "plugins": {
+    '@vuepress-reco/vuepress-plugin-kan-ban-niang': {
+      'theme': ['whiteCat'],
+      'clean': true
+    }
   }
 }
