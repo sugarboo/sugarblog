@@ -18,8 +18,6 @@ publish: true
 5. `Vue Language Features (Volar)`：Vscode 开发 vue3 必备插件，提供语法高亮提示，非常好用
 6. `Vue 3 Snippets`：vue3 快捷输入
 
-> 由于`Vue.js devtools` 需要到谷歌扩展商店才能下载,贴心 ❤️ 的`xy`已经为大家准备好了`crx`文件了,公众号回复:【`VueDevTools`】可自动获取哦 💪
-
 ## Vue2 与 Vue3 的区别
 
 `Vue3`由于完全由`TS`进行重写，在应用中对类型判断的定义和使用有很强的表现。同一对象的多个键返回值必须通过定义对应的接口（`interface`）来进行类型定义。要不然在 ESLint 时都会报错。
@@ -104,11 +102,16 @@ Vite 意在提供开箱即用的配置，同时它的 插件 API 和 JavaScript 
 1. 第三步: `cd` 到项目文件夹,安装依赖,启动项目
 
 
-    # 进入项目文件夹cd vite_vue3_ts
-    # 安装依赖
-    yarn
-    # 启动
-    yarn dev
+```
+# 进入项目文件夹
+cd 项目文件夹名
+
+# 安装依赖
+yarn
+
+# 启动
+yarn dev
+```
     
 
 
@@ -726,7 +729,7 @@ export interface ILoginApi {
 
 是不是很强大 💪
 
-> 官网链接: [www.attojs.com/](https://link.juejin.cn?target=https%3A%2F%2Fwww.attojs.com%2F)
+> 官网链接: [www.attojs.com/](https://www.attojs.com/)
 
 
 ## 状态管理 pinia
@@ -1065,7 +1068,7 @@ export default defineConfig({
     
 ## 常用插件
 
-> 可以查看官方文档：[vitejs.cn/plugins/](https://link.juejin.cn?target=https%3A%2F%2Fvitejs.cn%2Fplugins%2F)
+> 可以查看官方文档：[vitejs.cn/plugins/](https://cn.vitejs.dev/plugins/)
 
 
 - @vitejs/plugin-vue 提供 Vue 3 单文件组件支持
@@ -1081,7 +1084,7 @@ export default defineConfig({
 > 因为vue3.x和react hooks真的很像，所以就称为 hooks
 
 
-VueUse：[vueuse.org/](https://link.juejin.cn?target=https%3A%2F%2Fvueuse.org%2F)
+VueUse：[vueuse.org/](https://vueuse.org/)
 
 ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5cad83aaa662431cb6f73dc404a18791~tplv-k3u1fbpfcp-watermark.awebp)
 
