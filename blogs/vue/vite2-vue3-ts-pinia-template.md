@@ -1,3 +1,14 @@
+---
+title: Vite2 + Vue3 + TypeScript + Pinia 搭建一套企业级的开发脚手架
+date: '2022-03-06 23:30:00'
+sidebar: 'auto'
+categories:
+ - vue
+tags:
+ - vue
+publish: true
+---
+
 ## 搭建前准备
 
 1. `Vscode`: 前端人必备写码神器
@@ -1036,3 +1047,5 @@ Vue2 与 Vue3 最大的区别: Vue2 使用`Options API`而 Vue3 使用的`Compos
         看到这个库的第一眼，让我立马想到了 react 的 ahooks
         
         VueUse 是一个基于 Composition API 的实用函数集合。通俗的来说，这就是一个工具函数包，它可以帮助你快速实现一些常见的功能，免得你自己去写，解决重复的工作内容。以及进行了基于 Composition API 的封装。让你在 vue3 中更加得心应手。
+
+> 原文链接：[Vite2 + Vue3 + TypeScript + Pinia 搭建一套企业级的开发脚手架【值得收藏】 - 掘金](https://juejin.cn/post/7036745610954801166)
