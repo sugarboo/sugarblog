@@ -78,16 +78,16 @@ Vite 意在提供开箱即用的配置，同时它的 插件 API 和 JavaScript 
 
 1. 第一步: 在需要创建项目文件目录下打开 cmd 运行以下命令
 
+```
+# npm 6.x
+npm init @vitejs/app vite_vue3_ts --template
 
-    # npm 6.x
-    npm init @vitejs/app vite_vue3_ts --template
-    
-    # npm 7+, 需要额外的双横线：
-    npm init @vitejs/app vite_vue3_ts -- --template
-    
-    # yarn
-    yarn create @vitejs/app vite_vue3_ts --template
-    
+# npm 7+, 需要额外的双横线：
+npm init @vitejs/app vite_vue3_ts -- --template
+
+# yarn
+yarn create @vitejs/app vite_vue3_ts --template
+``` 
 
 
 这里我采用 `yarn` 来安装
