@@ -13,11 +13,9 @@ publish: true
 
 ```
 # 使用npm
-
 $ npm install tailwindcss -D
 
 # 使用yarn
-
 $ yarn add tailwindcss -D
 ```
 
@@ -29,9 +27,9 @@ npx tailwindcss init
 
 ## 配置tailwind.config.js
 > Since Tailwind no longer uses PurgeCSS under the hood, we’ve renamed the purge option to content to better reflect what it’s for: ...
-```js
-// /tailwind.config.js
 
+```js
+// ./tailwind.config.js
 module.exports = {
   // Tailwind CSS 3.0版本开始, 不再使用purgeCSS进行打包优化. 使用`content`配置项代替原`purge`配置项.
   content: [
@@ -50,20 +48,18 @@ module.exports = {
 
 
 ## 安装 PostCSS 和 autoprefixer
-### 使用npm
-
+```
+## 使用npm
 $ npm install postcss autoprefixer -D
 
-### 使用yarn
-
+# 使用yarn
 $ yarn add postcss autoprefixer -D
 ```
 
 ## 创建 PostCSS 配置文件
 
 ```js
-// /postcss.config.js
-
+// ./postcss.config.js
 module.exports = {
   plugins: {
     tailwindcss: { config: './tailwind.config.js' },
@@ -77,7 +73,7 @@ module.exports = {
 在`src/assets` 目录下创建tailwindcss.css
 
 ```js
-// src/assets/tailwindcss.css
+// ./src/assets/tailwindcss.css
 
 @tailwind base;
 @tailwind components;
