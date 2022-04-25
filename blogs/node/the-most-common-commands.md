@@ -55,26 +55,26 @@ $ yarn remove <package-name>
 
 ## 项目编译
 
-## npm
+### npm
 ```
 $ npm run build
 ```
 
-## yarn
+### yarn
 ```
 $ yarn build
 ```
 
 ## 查看当前npm / Yarn版本
 
-## npm
+### npm
 ```
 $ npm -v
 or
 $npm --version
 ```
 
-## yarn
+### yarn
 ```
 $ yarn -v
 or
@@ -83,12 +83,12 @@ $yarn --version
 
 ## 清除缓存
 
-## npm
+### npm
 ```
 $ npm cache clean
 ```
 
-## yarn
+### yarn
 ```
 $ yarn cache clean
 ```
