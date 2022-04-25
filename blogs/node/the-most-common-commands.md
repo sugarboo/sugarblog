@@ -15,43 +15,43 @@ publish: true
 ```
 $ npm install
 or
-$ npm install <package-name1>
-
-## common optional Tag:
-## -D or --save-dev
-## -g or --global
+$ npm install <package-name>
 ```
+
+**common optional tag:**
+`-D or --save-dev`
+`-g or --global`
 
 ### yarn
 ```
 $ yarn
 or
 $ yarn add <package-name>
-
-## common optional tag
-## -D or --save-dev
-## -g or -global
 ```
+
+**common optional tag:**
+`-D or --save-dev`
+`-g or -global`
 
 ## 移除依赖
 
 ### npm
 ```
 $ npm uninstall <package-name>
-
-## common optional Tag:
-## -D or --save-dev
-## -g or --global
 ```
+
+**common optional tag:**
+`-D or --save-dev`
+`-g or --global`
 
 ### yarn
 ```
 $ yarn remove <package-name>
-
-## common optional tag
-## -D or --save-dev
-## -g or -global
 ```
+
+**common optional tag:**
+`-D or --save-dev`
+`-g or -global`
 
 ## 项目编译
 
