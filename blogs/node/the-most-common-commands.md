@@ -11,7 +11,8 @@ publish: true
 
 ## 安装依赖
 
-### npm
+`npm`
+
 ```
 $ npm install
 or
@@ -19,10 +20,12 @@ $ npm install <package-name>
 ```
 
 **common optional tag:**
-`-D or --save-dev`
-`-g or --global`
 
-### yarn
+- `-D or --save-dev`
+- `-g or --global`
+
+`yarn`
+
 ```
 $ yarn
 or
@@ -35,46 +38,53 @@ $ yarn add <package-name>
 
 ## 移除依赖
 
-### npm
+`npm`
+
 ```
 $ npm uninstall <package-name>
 ```
 
 **common optional tag:**
-`-D or --save-dev`
-`-g or --global`
 
-### yarn
+- `-D or --save-dev`
+- `-g or --global`
+
+`yarn`
+
 ```
 $ yarn remove <package-name>
 ```
 
 **common optional tag:**
-`-D or --save-dev`
-`-g or -global`
+
+- `-D or --save-dev`
+- `-g or -global`
 
 ## 项目编译
 
-### npm
+`npm`
+
 ```
 $ npm run build
 ```
 
-### yarn
+### `yarn`
 ```
 $ yarn build
 ```
 
 ## 查看当前npm / Yarn版本
 
-### npm
+`npm`
+
 ```
 $ npm -v
 or
 $npm --version
 ```
 
-### yarn
+`yarn`
+
 ```
 $ yarn -v
 or
@@ -83,12 +93,14 @@ $yarn --version
 
 ## 清除缓存
 
-### npm
+`npm`
+
 ```
 $ npm cache clean
 ```
 
-### yarn
+`yarn`
+
 ```
 $ yarn cache clean
 ```
@@ -96,12 +108,14 @@ $ yarn cache clean
 
 ## 查看已安装的全局依赖
 
-### NPM
+`npm`
+
 ```
 $ npm list -g --depth 0
 ```
 
-### Yarn
+`yarn`
+
 ```
 $ yarn global list
 ```
