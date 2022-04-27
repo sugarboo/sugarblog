@@ -19,10 +19,7 @@ or
 $ npm install <package-name>
 ```
 
-**common optional tag:**
-
-- `-D or --save-dev`
-- `-g or --global`
+**common optional tag:`-D or --save-dev`, `-g or --global`**
 
 `yarn`
 
@@ -32,9 +29,7 @@ or
 $ yarn add <package-name>
 ```
 
-**common optional tag:**
-`-D or --save-dev`
-`-g or -global`
+**common optional tag: `-D or --save-dev`, `-g or -global`**
 
 ## 移除依赖
 
@@ -44,10 +39,7 @@ $ yarn add <package-name>
 $ npm uninstall <package-name>
 ```
 
-**common optional tag:**
-
-- `-D or --save-dev`
-- `-g or --global`
+**common optional tag: `-D or --save-dev`, `-g or --global`**
 
 `yarn`
 
@@ -55,10 +47,7 @@ $ npm uninstall <package-name>
 $ yarn remove <package-name>
 ```
 
-**common optional tag:**
-
-- `-D or --save-dev`
-- `-g or -global`
+**common optional tag:`-D or --save-dev`, `-g or -global`**
 
 ## 项目编译
 
@@ -68,7 +57,7 @@ $ yarn remove <package-name>
 $ npm run build
 ```
 
-### `yarn`
+`yarn`
 ```
 $ yarn build
 ```

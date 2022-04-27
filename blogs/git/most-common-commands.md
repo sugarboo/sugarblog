@@ -87,7 +87,4 @@ $ git br -a
 $ git remote update <remote-name>
 ```
 
-**optional tag:**
-
-- `-p or --prune`
-
+**optional tag: `-p or --prune`**
