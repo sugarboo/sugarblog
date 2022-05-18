@@ -45,6 +45,8 @@ $ git push -u <local-branch-name> <remote-branch-name>
 $ git push
 ```
 
+**optional tag: ** `-f or --force`
+
 ## 查看所有的远程仓库信息
 
 ```
@@ -88,3 +90,37 @@ $ git remote update <remote-name>
 ```
 
 **optional tag: `-p or --prune`**
+
+## 回退到某一次提交的版本
+
+```
+$ git reset <commit-id>
+```
+
+**optional tag:  ` --soft`, `--hard` , `--mixed`** 
+
+> `--mixed`: 默认值, 可省略. 用于重置暂存区的文件与上一次的提交(commit)保持一致，工作区文件内容保持不变。
+>
+> `--soft`: 用于回退到某个版本
+>
+> `--hard`: 撤销工作区中所有未提交的修改内容，将暂存区与工作区都回到上一次版本，并删除之前的所有信息提交 **(会删除回退点之前的所有信息. 慎用)**
+
+## 检出, 在本地审查和合并
+
+```
+# 1. 获取并检出此合并请求的分支
+$ git fetch <remote-name>
+$ git checkout -b <merging-local-branch-name> <remote-name>/<merging-remote-branch-name>
+
+# 2. 本地审查变更
+
+# 3. 合并分支并修复出现的任何冲突
+$ git checkout <to-be-merged-remote-branch-name>
+$ git merge --no-ff <merging-remote-branch-name>
+## ↑ 此时VSCode窗口会自动弹出, 可以在VSCode中手动处理冲突 ↑
+
+# 4. 推送合并的结果到远程仓库
+git push <remote-name> <to-be-merged-remote-branch-name>
+```
+
+![Code - 阿里云](https://i.imgur.com/xXjfmQx.png)
