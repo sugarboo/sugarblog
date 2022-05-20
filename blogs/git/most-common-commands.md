@@ -91,6 +91,16 @@ $ git remote update <remote-name>
 
 **optional tag: `-p or --prune`**
 
+## 删除分支
+
+```
+# 删除本地分支
+$ git branch -d <local-branch-name>
+
+# 删除远程分支
+git push <remote-name> --delete <remote-branch-name>
+```
+
 ## 回退到某一次提交的版本
 
 ```
