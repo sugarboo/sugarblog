@@ -106,7 +106,7 @@ module.exports = {
   },
   "plugins": {
     '@vuepress-reco/vuepress-plugin-kan-ban-niang': {
-      'theme': ['blackCat'],
+      'theme': ['whiteCat'],
       'clean': true
     }
   }
