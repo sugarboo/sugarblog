@@ -38,6 +38,8 @@ keys:
 [跟单工作台V1.0 - MasterGo](https://mastergo.com/file/63535901837134)
 
 ## 后台
+[1商品管理-供应链开发PRD文档V2.0](https://docs.qq.com/doc/DYUJ4amVxeGx6Q1Fw)
+
 [2企业与用户-供应链开发PRD文档V2.0](https://docs.qq.com/doc/DYUJnYmJHVGxhbmV1)
 
 [运营后台-蓝湖](https://lanhuapp.com/web/#/item/project/stage?pid=8df24ff2-9201-4430-a449-3f556480c062)
