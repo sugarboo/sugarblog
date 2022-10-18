@@ -24,11 +24,15 @@ keys:
 
 [苗圃端小程序-蓝湖](https://lanhuapp.com/web/#/item/project/stage?pid=e5582176-9b56-4199-93a7-172ea608d7f5)
 
+[地被直营店-需求补充-苗圃端接单被拒信息反馈填补](https://docs.qq.com/doc/DYVpqUVhSc3ZIaEp0)
+
 ## 物流端
 
 [物流端小程序-供应链开发PRD文档V2.0](https://docs.qq.com/doc/DYXFGVUJDZVlUQW5R)
 
 [物流端小程序-蓝湖](https://lanhuapp.com/web/#/item/project/stage?pid=55e3c3aa-26e9-4d4c-b0af-4cc5fa439b50)
+
+[供应链-物流端新增需求-物流申请签收](https://docs.qq.com/doc/DYUJaTlVQc0ZlWmNq)
 
 ## 跟单系统
 [苗仓跟单工作台V1.0需求说明](https://docs.qq.com/doc/DVUlZdERTVFZ5REtR)
