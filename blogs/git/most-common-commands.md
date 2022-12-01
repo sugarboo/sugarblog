@@ -91,6 +91,12 @@ $ git remote update <remote-name>
 
 **optional tag: `-p or --prune`**
 
+## 移除已被删除的远程分支
+
+```
+$ git remote prune <remote-name>
+```
+
 ## 删除分支
 
 ```
