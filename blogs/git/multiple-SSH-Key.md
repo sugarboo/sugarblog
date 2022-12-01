@@ -63,3 +63,11 @@ IdentityFile ~/.ssh/新的文件名_id_rsa
 ssh -T git@github.com
 ssh -T git@code.aliyun.com
 ```
+## 注: no matching host key type found的解决方法
+
+在`~/.ssh/config`文件中添加以下配置:
+```
+Host *
+HostkeyAlgorithms +ssh-rsa
+PubkeyAcceptedKeyTypes +ssh-rsa
+```
