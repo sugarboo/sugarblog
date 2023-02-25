@@ -23,73 +23,97 @@ publish: true
 
 ### 1、使用globalData实现
 
-    //page Aconst app = getApp() //获取App.js实例onShow() {//生命周期函数--监听页面显示if (app.globalData.backData) {
-        this.setData({ //将B页面更新完的值渲染到页面上backData: app.globalData.backData
-        },()=>{
-         	delete app.globalData.backData//删除数据 避免onShow重复渲染
-        })
-      }
-    }
-    //page Bconst app = getApp() //获取App.js实例changeBackData(){
-       app.globalData.backData = '我被修改了'
-       wx.navigateBack()
-    }
-    复制代码
+```js
+// page A
+// 获取App.js实例
+const app = getApp()
+// 生命周期函数--监听页面显示
+onShow() {
+  if (app.globalData.backData) {
+    this.setData({
+      // 将B页面更新完的值渲染到页面上
+      backData: app.globalData.backData
+    }, () => {
+      // 删除数据 避免onShow重复渲染
+      delete app.globalData.backData
+    })
+  }
+}
+// page B
+// 获取App.js实例
+const app = getApp()
+changeBackData(){
+  app.globalData.backData = '我被修改了'
+  wx.navigateBack()
+}
+```
 
 ### 2、使用本地缓存Storage实现
 
-    //page AonShow: function () {
-        let backData = wx.getStorageSync('backData')
-        if(backData){
-           this.setData({
-         		 backData
-        	},()=>{
-         		 wx.removeStorageSync('backData')
-        	})
-        }
-      },
-     //page BchangeBackData(){
-        wx.setStorageSync('backData', '我被修改了')
-        wx.navigateBack()
-     },
-    复制代码
+```js
+// page A
+onShow: function () {
+    let backData = wx.getStorageSync('backData')
+    if(backData){
+      this.setData({
+        backData
+    }, () => {
+        wx.removeStorageSync('backData')
+    })
+  }
+},
+// page B
+changeBackData(){
+  wx.setStorageSync('backData', '我被修改了')
+  wx.navigateBack()
+},
+```
 
 ### 3、使用小程序的Page页面栈实现
 
 使小程序的页面栈，比其他两种方式会更方便一点而且渲染的会更快一些，不需要等回退到A页面上再把数据渲染出来，在B页面上的直接就会更新A页面上的值，回退到A页面的时候，值已经被更新了。globalData和Storage实现的原理都是在B页面上修改完值以后，回退到A页面，触发onShow生命周期函数，来更新页面渲染。
 
-    //page BchangeBackData(){
-        const pages = getCurrentPages();
-        const beforePage = pages[pages.length - 2]
-        beforePage.setData({  //会直接更新A页面的数据，A页面不需要其他操作backData: "我被修改了"
-        })
-    }
-    复制代码
+```js
+// page B
+changeBackData(){
+  const pages = getCurrentPages()
+  const beforePage = pages[pages.length - 2]
+  beforePage.setData({
+    // 会直接更新A页面的数据，A页面不需要其他操作
+    backData: "我被修改了"
+  })
+}
+```
 
 ### 4、使用wx.navigateTo API的events实现
 
 wx.navigateTo的events的实现原理是利用设计模式的发布订阅模式实现的，有兴趣的同学可以自己动手实现一个简单的，也可以实现相同的效果。
 
-    //page AgoPageB() {
-        wx.navigateTo({
-          url: 'B',
-          events: {
-            getBackData: res => { //在events里面添加监听事件this.setData({
-                backData: res.backData
-              })
-            },
-          },
+```js
+//page A
+goPageB() {
+  wx.navigateTo({
+    url: 'B',
+    events: {
+      //在events里面添加监听事件
+      getBackData: res => {
+      this.setData({
+          backData: res.backData
         })
       },
-    //page B	changeBackData(){
-        const eventChannel = this.getOpenerEventChannel()
-           eventChannel.emit('getBackData', {  
-         	 backData: '我被修改了'
-        });
-         wx.navigateBack()
-     }
-    复制代码
+    },
+  })
+},
+// page B
+changeBackData(){
+  const eventChannel = this.getOpenerEventChannel()
+    eventChannel.emit('getBackData', {  
+    backData: '我被修改了'
+  })
+  wx.navigateBack()
+}
+```
 
 ### 总结
 
-1和2两种方法在页面渲染效果上比后面两种稍微慢一点，3和4两种方法在B页面回退到A页面之前已经触发了更新，而1和2两种方法是等返回到A页面之后，在A页面才触发更新。并且1和2两种方式，要考虑到A页面更新完以后要删除globalData和Storage的数据，避免onShow方法里面重复触发setData更新页面，所以个人更推荐大家使用后面的3和4两种方式。
+**1和2两种方法在页面渲染效果上比后面两种稍微慢一点，3和4两种方法在B页面回退到A页面之前已经触发了更新，而1和2两种方法是等返回到A页面之后，在A页面才触发更新。并且1和2两种方式，要考虑到A页面更新完以后要删除globalData和Storage的数据，避免onShow方法里面重复触发setData更新页面，所以个人更推荐大家使用后面的3和4两种方式。**
