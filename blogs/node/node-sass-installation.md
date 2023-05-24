@@ -37,7 +37,7 @@ node -p "[process.platform, process.arch, process.versions.modules].join('-')"
 在命令行运行如下命令，将 binding.node 文件的本地存放路径，配置到 `SASS_BINARY_PATH` 环境变量中。
 
 ```shell
-set SASS_BINARY_PATH=D:\FED\utils\win32-x64-83_binding.node
+Set-Variable -Name "SASS_BINARY_PATH" -Value "D:\FED\utils\win32-x64-83_binding.node"
 ```
 
 ![pic](https://imgur.com/rwKREIR.png)
