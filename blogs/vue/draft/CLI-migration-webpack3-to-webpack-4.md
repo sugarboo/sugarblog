@@ -31,7 +31,6 @@ npm i ora@3 -D
 npm i semver@5 -D
 npm i shelljs@0 -D
 npm i url-loader@1 -D
-
 npm uninstall extract-text-webpack-plugin
 ```
 
