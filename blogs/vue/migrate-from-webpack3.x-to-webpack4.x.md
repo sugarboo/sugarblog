@@ -1,5 +1,5 @@
 ---
-title: Vue 2 项目脚手架升级（一）：从 Webpack3.x 迁移至 Webpack 4.x
+title: Vue 2.x 项目脚手架升级（一）：从 Webpack 3.x 迁移至 Webpack 4.x
 date: '2023-07-13 23:00:00'
 sidebar: 'auto'
 categories:
@@ -12,8 +12,6 @@ publish: true
 ## 第一步：更新依赖包版本
 
 ```shell
-# /package.json
-
 # dependencies
 npm i vue@legacy
 
@@ -103,18 +101,7 @@ exports.cssLoaders = function (options) {
 
 ### vue-loader.conf.js
 
-`vue-loader <= 14` 的版本， `vue-loader` 相关的配置一般都是另外写在 `/build/vue-loader.conf.js` 这个文件内，然后在 `/build/webpack.base.conf.js` 引入该文件的。但是`vue-loader 15+` 版本需要在`/build/webpack.base.conf.js` 的 `plugins` 配置中引入 `vue-loader 15+` 新的 `VueLoaderPlugin` 插件，所以干脆把 `vue-loader` 的相关配置也直接写在 `/build/webpack.base.conf.js` 内就好了。原来写在 `/build/vue-loader.conf.js` 文件的配置直接删掉即可。
-
-```js
-// /build/vue-loader.conf.js
-
-'use strict'
-
-module.exports = {
-  //You can set the vue-loader configuration by yourself.
-}
-
-```
+`vue-loader <= 14` 的版本， `vue-loader` 相关的配置一般都是另外写在 `build/vue-loader.conf.js` 这个文件内，然后在 `build/webpack.base.conf.js` 引入该文件的。但是`vue-loader 15+` 版本需要在`build/webpack.base.conf.js` 的 `plugins` 配置中引入 `vue-loader 15+` 新的 `VueLoaderPlugin` 插件，所以干脆把 `vue-loader` 的相关配置也直接写在 `build/webpack.base.conf.js` 内就好了。原来 `build/vue-loader.conf.js` 文件，可以直接删除掉。
 
 ### webpack.base.conf.js
 
@@ -124,7 +111,7 @@ module.exports = {
 
 
 ```js
-// /build/webpack.base.conf.js
+// build/webpack.base.conf.js
 
 const { VueLoaderPlugin } = require('vue-loader')
 
@@ -150,7 +137,7 @@ module.exports = {
 
 ## 第四步：修改 Webpack 打包配置相关的文件
 
-Webpack 版本从 3.x 升级到 4.x 后，开发环境配置文件`/build/webpack.dev.conf.js`，以及生产环境配置文件`/build/webpack.prod.conf.js` 也要相应地做一些修改。
+Webpack 版本从 3.x 升级到 4.x 后，开发环境配置文件 `build/webpack.dev.conf.js`，以及生产环境配置文件 `build/webpack.prod.conf.js` 也要相应地做一些修改。
 
 ### webpack.dev.conf.js
 
@@ -172,7 +159,7 @@ Webpack 版本从 3.x 升级到 4.x 后，开发环境配置文件`/build/webpac
 
 
 ```js
-// /build/webpack.prod.conf.js
+// build/webpack.prod.conf.js
 
 // ...
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
@@ -190,8 +177,8 @@ const webpackConfig = merge(baseWebpackConfig, {
   // ...
   output: {
     path: config.build.assetsRoot,
-    filename: utils.assetsPath('js/[name].[chunkhash:8].js'),
-    chunkFilename: utils.assetsPath('js/[name].[chunkhash:8].js')
+    filename: utils.assetsPath('js/[name].[chunkhash].js'),
+    chunkFilename: utils.assetsPath('js/[name].[chunkhash].js')
   },
   
   // ...
@@ -200,8 +187,8 @@ const webpackConfig = merge(baseWebpackConfig, {
 
     // extract css into its own file
     new MiniCssExtractPlugin({
-      filename: utils.assetsPath('css/[name].[contenthash:8].css'),
-      chunkFilename: utils.assetsPath('css/[name].[contenthash:8].css')
+      filename: utils.assetsPath('css/[name].[contenthash].css'),
+      chunkFilename: utils.assetsPath('css/[name].[contenthash].css')
     }),
 
     new ScriptExtHtmlWebpackPlugin({
@@ -303,11 +290,11 @@ module.exports = webpackConfig
 ```
 
 ## References
->
+
 > [To v4 from v3 | webpack](https://webpack.js.org/migrate/4/)
->
+
 > [Step by Step Migration - Webpack 3 to Webpack 4 - CodeProject](https://www.codeproject.com/Articles/1277835/Step-by-Step-Migration-Webpack-3-to-Webpack-4)
-> 
+ 
 > [Webpack upgrade from 3 to 4. All you need to know to upgrade Webpack… | by Sujaan Singh | Medium](https://medium.com/@sujankanwar/webpack-upgrade-from-3-to-4-687c6076c285)
->
+
 > [update to webpack4 (#889) · PanJiaChen/vue-element-admin@378ca2c](https://github.com/PanJiaChen/vue-element-admin/commit/378ca2c217f94d3f31e2518116708092ee06f95c)
