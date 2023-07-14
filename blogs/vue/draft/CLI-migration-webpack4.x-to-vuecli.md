@@ -1,4 +1,8 @@
-# CLI migration: update webpack 4.x to vue/cli
+---
+publish: false
+---
+
+# CLI migration: update webpack 4.x to vue-cli
 
 ## Commits
 [build(cli): update to @vue/cli 3.x](https://codeup.aliyun.com/642f90e6bff3b5aa545628c1/miaocangchina/miaocang-h5/commit/e50884dc51b4bdae51a411e45c12b9e2fe439843?branch=cli_vuecli)

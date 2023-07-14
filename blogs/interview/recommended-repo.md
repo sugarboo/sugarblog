@@ -6,7 +6,7 @@ categories:
  - interview
 tags:
  - interview
-publish: true
+publish: false
 ---
 ## 1. Front-end Developer Interview Questions
 [Front-end Developer Interview Questions](https://h5bp.org/Front-end-Developer-Interview-Questions/)

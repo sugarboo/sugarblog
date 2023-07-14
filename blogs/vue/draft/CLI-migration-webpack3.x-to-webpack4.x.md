@@ -1,3 +1,7 @@
+---
+publish: false
+---
+
 # CLI migration: update webpack 3.x to webpack 4.x
 
 ## Commits

@@ -6,7 +6,7 @@ categories:
  - vue
 tags:
  - vue
-publish: true
+publish: false
 ---
 
 ## 安装 Tailwind CSS
