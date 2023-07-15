@@ -19,12 +19,14 @@ publish: true
 
 1. 需要依赖 `core-js` ，此处选择安装了 `core-js 3.x` 的版本；
 2. 使用 `vue-cli` 作为项目脚手架时，需要依赖 `vue-template-compiler` 这个库，且版本号应与 `dependencies` 中 `vue` 的版本号一致；
-3. 若 `sass-loader` 安装的版本太高，启动 dev server 时会出现：`Error: PostCSS plugin autoprefixer requires PostCSS 8. Update PostCSS or downgrade this plugin` 的错误提示。此处选择安装 `sass-loader 8.x` 的版本后可以避免此错误。
+3. 若 `sass-loader` 安装的版本太高，启动 dev server 时会出现：`Error: PostCSS plugin autoprefixer requires PostCSS 8. Update PostCSS or downgrade this plugin` 的错误提示。此处选择安装 `sass-loader 8.x` 的版本后可以避免此错误；
+4. `vue-cli` 脚手架已经内置了 `postcss` 和 `autoprefixer` 依赖库，无需重复安装。
 
 ```shell
 # dependencies
 npm i core-js@3
 npm uninstall ajv
+npm uninstall autoprefixer
 npm uninstall babel-plugin-component
 npm uninstall babel-polyfill
 npm uninstall es6-promise
@@ -38,7 +40,6 @@ npm i @babel/register@7 -D
 npm i @vue/cli-plugin-babel@4 -D
 npm i @vue/cli-service@4 -D
 npm i babel-plugin-component -D
-npm i autoprefixer@9 -D
 npm i sass -D
 npm i sass-loader@8 -D
 npm i vue-template-compiler@2.6.14 -D
