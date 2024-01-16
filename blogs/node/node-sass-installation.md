@@ -19,7 +19,7 @@ npm 安装 node-sass 依赖时，需要从 github 的 node-sass repo 上下载 b
 
 因此，如果不想安装并配置 Python环境的话，可以自行在 node-sass 的 github repo 中下载所需的 binding.node 文件到本地目录，然后在安装 node-sass 时直接在这个本地目录下找到该文件，省去在安装过程中下载 binding.node 的步骤即可。具体步骤如下：
 
-## 解决方法
+## 解决方法 1：手动下载二进制文件
 
 ### 1. 下载node-sass安装所需的 .node 文件
 
@@ -43,5 +43,13 @@ Set-Variable -Name "SASS_BINARY_PATH" -Value "D:\FED\utils\win32-x64-83_binding.
 ![pic](https://imgur.com/rwKREIR.png)
 
 执行完上述步骤，就大功告成了。回到需要安装 node-sass 依赖包的前端项目，就可以顺利完成安装依赖包的操作了。
+
+## 解决方法 2：配置 npm 二进制下载源
+
+在命令行运行以下命令，将 npm 二进制下载源修改为淘宝镜像源，即可避免网络问题。
+
+```shell
+npm config set sass-binary-site https://registry.npmmirror.com/node-sass
+```
 
 > 参考资料：[node-sass安装失败解决方法总结(终有一款适合你)_node.js_脚本之家](https://www.jb51.net/article/268608.htm)
