@@ -6,7 +6,7 @@ categories:
  - vue
 tags:
  - vue
-publish: true
+publish: false
 ---
 
 ## 搭建前准备

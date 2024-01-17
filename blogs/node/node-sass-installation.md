@@ -46,7 +46,7 @@ Set-Variable -Name "SASS_BINARY_PATH" -Value "D:\FED\utils\win32-x64-83_binding.
 
 ## 解决方法 2：配置 npm 二进制下载源
 
-在命令行运行以下命令，将 npm 二进制下载源修改为淘宝镜像源，即可避免网络问题。
+在命令行运行以下命令，将 npm 二进制下载源修改为淘宝镜像源，即可避免**网络**问题。
 
 ```shell
 npm config set sass-binary-site https://registry.npmmirror.com/node-sass

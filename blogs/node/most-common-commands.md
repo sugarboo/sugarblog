@@ -6,7 +6,7 @@ categories:
  - node
 tags:
  - node
-publish: true
+publish: false
 ---
 
 ## 安装依赖

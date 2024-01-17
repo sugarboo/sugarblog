@@ -6,7 +6,7 @@ categories:
  - vue
 tags:
  - vue
-publish: true
+publish: false
 ---
 
 1. 根目录的vue.config.js文件:

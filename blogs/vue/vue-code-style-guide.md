@@ -6,7 +6,7 @@ categories:
  - vue
 tags:
  - vue
-publish: true
+publish: false
 ---
 
 ## 一、命名规范
