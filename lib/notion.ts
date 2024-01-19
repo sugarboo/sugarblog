@@ -1,3 +1,4 @@
+import { PostResult } from '@/types/post'
 import { Client } from '@notionhq/client'
 
 const notion = new Client({

@@ -19,6 +19,9 @@ dependencies:
     version: 18.2.0(react@18.2.0)
 
 devDependencies:
+  '@mdx-js/react':
+    specifier: ^3.0.0
+    version: 3.0.0(@types/react@18.0.38)(react@18.2.0)
   '@types/node':
     specifier: ^20
     version: 20.11.5
@@ -148,6 +151,17 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+    dev: true
+
+  /@mdx-js/react@3.0.0(@types/react@18.0.38)(react@18.2.0):
+    resolution: {integrity: sha512-nDctevR9KyYFyV+m+/+S4cpzCWHqj+iHDHq3QrsWezcC+B17uZdIWgCguESUkwFhM3n/56KxWVE3V6EokrmONQ==}
+    peerDependencies:
+      '@types/react': '>=16'
+      react: '>=16'
+    dependencies:
+      '@types/mdx': 2.0.10
+      '@types/react': 18.0.38
+      react: 18.2.0
     dev: true
 
   /@next/env@14.0.4:
@@ -285,6 +299,10 @@ packages:
 
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/mdx@2.0.10:
+    resolution: {integrity: sha512-Rllzc5KHk0Al5/WANwgSPl1/CwjqCy+AZrGd78zuK+jO9aDM6ffblZ+zIjgPNAaEBmlO0RYDvLNh7wD0zKVgEg==}
     dev: true
 
   /@types/node-fetch@2.6.11:
