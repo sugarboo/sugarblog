@@ -1,4 +1,6 @@
-import { PostResult } from '@/types/post'
+import { BlockResult } from '@/types/block'
+import { PageResult } from '@/types/page'
+import { DatabasePost } from '@/types/post'
 import { Client } from '@notionhq/client'
 
 const notion = new Client({
@@ -10,14 +12,14 @@ const getDatabase = async() => {
   const response = await notion.databases.query({
     database_id: databaseId
   })
-  return response.results
+  return response.results as DatabasePost[]
 }
 
 const getPage = async(pageId: string) => {
   const response = await notion.pages.retrieve({
     page_id: pageId
   })
-  return response
+  return response as PageResult
 }
 
 const getBlocks = async(blockId: string) => {
@@ -25,7 +27,7 @@ const getBlocks = async(blockId: string) => {
     block_id: blockId,
     page_size: 50
   })
-  return response.results
+  return response.results as BlockResult[]
 }
 
 export {

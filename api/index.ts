@@ -1,4 +1,6 @@
 import { getBlocks, getDatabase, getPage } from "@/lib/notion"
+import { Page } from "@/types/page"
+import { Post } from "@/types/post"
 
 /**
  * fetch post list via Notion API.
@@ -6,7 +8,7 @@ import { getBlocks, getDatabase, getPage } from "@/lib/notion"
  * @returns formatted post list data
  */
 const getPostListData = async () => {
-  const list = []
+  const list: Post[] = []
 
   const rawList = await getDatabase()
   
@@ -20,6 +22,7 @@ const getPostListData = async () => {
       title,
       post,
       createdTime,
+      lastEditedTime,
       isPublished,
       isDeleted,
     } = properties
@@ -29,7 +32,8 @@ const getPostListData = async () => {
         cover: cover?.file?.url || cover?.external?.url,
         title: title?.rich_text[0]?.text?.content,
         post: post?.title[0]?.text?.content,
-        createdTimeTxt: createdTime?.created_time
+        createdTimeTxt: createdTime?.created_time,
+        lastEditedTimeTxt: lastEditedTime?.last_edited_time,
       })
     }
   })
@@ -43,16 +47,15 @@ const getPostListData = async () => {
  * @returns formatted post page data
  */
 const getPostPageData = async () => {
-  let page
+  let page: Partial<Page> = {}
 
   const list = await getPostListData()
 
   const pageId = list.length ? list[0].id : undefined
   if (pageId) {
     const rawBlocks = await getBlocks(pageId)
-    const rawPage = rawBlocks.length ? rawBlocks[0] : undefined
+    const rawPage = rawBlocks[0]
     const { cover } = await getPage(pageId)
-    const pageCover = cover?.file?.url || cover?.external?.url
     const {
       code,
       created_time: createdTime,
@@ -60,7 +63,7 @@ const getPostPageData = async () => {
     } = rawPage
     page = {
       content: code?.rich_text[0]?.text?.content,
-      cover: pageCover,
+      cover: cover?.file?.url || cover?.external?.url,
       createdTimeTxt: createdTime,
       lastEditedTimeTxt: lastEditedTime,
     }
