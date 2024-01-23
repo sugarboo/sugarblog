@@ -1,6 +1,8 @@
-import { getBlocks, getDatabase, getPage } from "@/lib/notion"
-import { Page } from "@/types/page"
-import { Post } from "@/types/post"
+import dayjs from 'dayjs'
+
+import { getBlocks, getDatabase, getPage } from '@/lib/notion'
+import { Page } from '@/types/page'
+import { Post } from '@/types/post'
 
 /**
  * fetch post list via Notion API.
@@ -21,6 +23,7 @@ const getPostListData = async () => {
     const {
       title,
       post,
+      category,
       createdTime,
       lastEditedTime,
       isPublished,
@@ -32,8 +35,9 @@ const getPostListData = async () => {
         cover: cover?.file?.url || cover?.external?.url,
         title: title?.rich_text[0]?.text?.content,
         post: post?.title[0]?.text?.content,
-        createdTimeTxt: createdTime?.created_time,
-        lastEditedTimeTxt: lastEditedTime?.last_edited_time,
+        tag: category?.select?.name,
+        createdTimeTxt: dayjs(createdTime?.created_time).format('MMM D, YYYY'),
+        lastEditedTimeTxt: dayjs(lastEditedTime?.last_edited_time).format('MMM D, YYYY'),
       })
     }
   })
@@ -55,7 +59,7 @@ const getPostPageData = async () => {
   if (pageId) {
     const rawBlocks = await getBlocks(pageId)
     const rawPage = rawBlocks[0]
-    const { cover } = await getPage(pageId)
+    const { category, cover } = await getPage(pageId)
     const {
       code,
       created_time: createdTime,
@@ -64,8 +68,9 @@ const getPostPageData = async () => {
     page = {
       content: code?.rich_text[0]?.text?.content,
       cover: cover?.file?.url || cover?.external?.url,
-      createdTimeTxt: createdTime,
-      lastEditedTimeTxt: lastEditedTime,
+      tag: category?.select?.name,
+      createdTimeTxt: dayjs(createdTime).format('MMM D, YYYY'),
+      lastEditedTimeTxt: dayjs(lastEditedTime).format('MMM D, YYYY'),
     }
   }
   

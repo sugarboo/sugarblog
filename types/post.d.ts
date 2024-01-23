@@ -5,7 +5,7 @@ import type {
   QueryDatabaseResponse
 } from "@notionhq/client/build/src/api-endpoints"
 
-type EmptyObject = EmptyObject
+type EmptyObject = Record<string, never>
 
 // To make sure post from Notion API with the `properties` entries
 type PostResult = Extract<
@@ -58,6 +58,7 @@ interface Post {
   cover?: string
   title: string
   post: string
+  tag: string
   createdTimeTxt: string
   lastEditedTimeTxt: string
 }

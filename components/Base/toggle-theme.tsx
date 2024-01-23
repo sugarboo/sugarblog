@@ -1,10 +1,10 @@
 "use client"
-import type { MouseEvent } from "react"
+import type { MouseEvent } from 'react'
  
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
+import { Moon, Sun } from 'lucide-react'
+import { useTheme } from 'next-themes'
  
-import { Button } from "@/components/ui/button"
+import { Button } from '@/components/ui/button'
 
 export function ToggleTheme() {
   const { theme, systemTheme, setTheme } = useTheme()
@@ -48,7 +48,7 @@ export function ToggleTheme() {
     <Button 
       variant="ghost" 
       size="icon" 
-      className="rounded-full" 
+      className="rounded-full outline-none" 
       onClick={(event) => toggleTheme(event)}
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
