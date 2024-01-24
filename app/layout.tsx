@@ -8,7 +8,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import NavigationBar from '@/components/base/navigation-bar'
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans'
 })
@@ -39,9 +39,7 @@ export default function RootLayout({
           <nav>
             <NavigationBar />
           </nav>
-          <main
-            className='max-w-[768px] m-auto'
-          >
+          <main className='max-w-[768px] m-auto'>
             {children}
           </main>
         </ThemeProvider>

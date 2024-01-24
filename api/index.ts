@@ -1,8 +1,9 @@
+import type { Page } from '@/types/page'
+import type { Post } from '@/types/post'
+
 import dayjs from 'dayjs'
 
 import { getBlocks, getDatabase, getPage } from '@/lib/notion'
-import { Page } from '@/types/page'
-import { Post } from '@/types/post'
 
 /**
  * fetch post list via Notion API.

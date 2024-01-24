@@ -1,6 +1,7 @@
-import { BlockResult } from '@/types/block'
-import { PageResult } from '@/types/page'
-import { DatabasePost } from '@/types/post'
+import type { BlockResult } from '@/types/block'
+import type { PageResult } from '@/types/page'
+import type { DatabasePost } from '@/types/post'
+
 import { Client } from '@notionhq/client'
 
 const notion = new Client({
