@@ -51,28 +51,23 @@ const getPostListData = async () => {
  * 
  * @returns formatted post page data
  */
-const getPostPageData = async () => {
-  let page: Partial<Page> = {}
+const getPostPageData = async (pageId: string) => {
+  let page
 
-  const list = await getPostListData()
-
-  const pageId = list.length ? list[0].id : undefined
-  if (pageId) {
-    const rawBlocks = await getBlocks(pageId)
-    const rawPage = rawBlocks[0]
-    const { category, cover } = await getPage(pageId)
-    const {
-      code,
-      created_time: createdTime,
-      last_edited_time: lastEditedTime,
-    } = rawPage
-    page = {
-      content: code?.rich_text[0]?.text?.content,
-      cover: cover?.file?.url || cover?.external?.url,
-      tag: category?.select?.name,
-      createdTimeTxt: dayjs(createdTime).format('MMM D, YYYY'),
-      lastEditedTimeTxt: dayjs(lastEditedTime).format('MMM D, YYYY'),
-    }
+  const rawBlocks = await getBlocks(pageId)
+  const rawPage = rawBlocks[0]
+  const { category, cover } = await getPage(pageId)
+  const {
+    code,
+    created_time: createdTime,
+    last_edited_time: lastEditedTime,
+  } = rawPage
+  page = {
+    content: code?.rich_text[0]?.text?.content,
+    cover: cover?.file?.url || cover?.external?.url,
+    tag: category?.select?.name,
+    createdTimeTxt: dayjs(createdTime).format('MMM D, YYYY'),
+    lastEditedTimeTxt: dayjs(lastEditedTime).format('MMM D, YYYY'),
   }
   
   return page

@@ -9,8 +9,8 @@ type PageResult = PageObjectResponse & {
 // The type of page to be rendering
 interface Page {
   content: string
-  cover: string
-  tag: string
+  cover?: string
+  tag?: string
   createdTimeTxt: string
   lastEditedTimeTxt: string
 }

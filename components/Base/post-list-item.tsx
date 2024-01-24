@@ -9,7 +9,9 @@ const PostListItem = ({
 }) => {
   return (
     <Link
-      href={`blog/${post.post}`}
+      // [WIP]: Finding a solution to pass `post.id` without showing it in URL 😵
+      // href={`/blog/${post.post}`} 
+      href={`/blog/${post.id}`}
       key={post.id}
       className='
         group flex items-center gap-2 md:gap-4

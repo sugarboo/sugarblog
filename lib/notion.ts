@@ -34,5 +34,5 @@ const getBlocks = async(blockId: string) => {
 export {
   getDatabase,
   getPage,
-  getBlocks 
+  getBlocks,
 }
