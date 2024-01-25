@@ -9,9 +9,9 @@ import type {
 type EmptyObject = Record<string, never>
 
 type SelectPropertyResponse = {
-  id: StringRequest;
-  name: StringRequest;
-  color: SelectColor;
+  id: StringRequest
+  name: StringRequest
+  color: SelectColor
 }
 
 // To make sure post from Notion API with the `properties` entries
@@ -96,6 +96,7 @@ interface Post {
 }
 
 export {
+  PropertyValueRichText,
   PostResult,
   DatabasePost,
   Post

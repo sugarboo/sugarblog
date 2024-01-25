@@ -56,13 +56,20 @@ const getPostPageData = async (pageId: string) => {
 
   const rawBlocks = await getBlocks(pageId)
   const rawPage = rawBlocks[0]
-  const { category, cover } = await getPage(pageId)
+  const { cover, properties: pageProperties } = await getPage(pageId)
+
+  const {
+    title,
+    category,
+  } = pageProperties
+  
   const {
     code,
     created_time: createdTime,
     last_edited_time: lastEditedTime,
   } = rawPage
   page = {
+    title: title?.rich_text[0]?.text?.content,
     content: code?.rich_text[0]?.text?.content,
     cover: cover?.file?.url || cover?.external?.url,
     tag: category?.select?.name,
