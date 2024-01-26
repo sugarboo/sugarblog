@@ -44,7 +44,7 @@ const NavigationBar = () => {
   return (
     <div className='
       relative
-      h-10 mx-2 my-2 md:mx-8 md:my-4
+      h-10 mx-2 md:mx-8
     '>
       <div className='flex justify-center items-center gap-4 md:gap-8'>
         {navigationList.map((item) => (

@@ -14,7 +14,7 @@ const PostListItem = ({
       href={`/blog/${post.id}`}
       key={post.id}
       className='
-        group flex items-center gap-2 md:gap-4
+        group flex items-center gap-1 md:gap-4
         mx-2 my-4
         animate-slowly-in transition-all duration-300 ease-in-out
         select-none

@@ -1,6 +1,6 @@
 import { getPostPageData } from '@/api'
 
-import CustomMDX from '@/components/base/mdx/custom-mdx'
+import CustomMDX from '@/components/mdx/custom-mdx'
 import { Clock, Tag } from 'lucide-react'
 
 export default async function BlogPage({
@@ -16,7 +16,7 @@ export default async function BlogPage({
 
   return (
     <div className='p-4'>
-      <div className='flex flex-col mb-6'>
+      <div className='flex flex-col mb-8'>
         <h1 className='text-2xl font-bold my-8'>{page.title}</h1>
         <div className='flex items-center gap-6 text-sm text-muted-foreground select-none'>
           <span className='flex items-center gap-1'>
@@ -30,7 +30,8 @@ export default async function BlogPage({
         </div>
       </div>
 
-      <div className='animate-slowly-in'>
+      <div className='mdx-content animate-slowly-in'>
+        {/* @ts-ignore: Promise<JSX.Element> error, but it still can render as expected. */}
         <CustomMDX source={page.content} />
       </div>
     </div>

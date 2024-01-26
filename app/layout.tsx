@@ -36,7 +36,7 @@ export default function RootLayout({
           disableTransitionOnChange
           storageKey="color-theme"
         >
-          <nav>
+          <nav className='sticky top-0 md:py-2 bg-background z-50'>
             <NavigationBar />
           </nav>
           <main className='max-w-[768px] m-auto'>

@@ -76,9 +76,6 @@ devDependencies:
   shikiji:
     specifier: ^0.10.0
     version: 0.10.0
-  sugar-high:
-    specifier: ^0.5.6
-    version: 0.5.6
   tailwindcss:
     specifier: ^3.3.0
     version: 3.3.1(postcss@8.4.31)
@@ -3546,10 +3543,6 @@ packages:
       mz: 2.7.0
       pirates: 4.0.5
       ts-interface-checker: 0.1.13
-
-  /sugar-high@0.5.6:
-    resolution: {integrity: sha512-VfBxzjVfnYuiYpsjCKp8Jp9zE4pz15eBgMF4wROppvEumQobGIYyKSUaF14Fax4W3KMFZenIg6gAVM3LQZcb3A==}
-    dev: true
 
   /supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
