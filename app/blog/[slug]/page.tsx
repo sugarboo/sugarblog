@@ -1,7 +1,35 @@
+import type { Metadata, ResolvingMetadata } from 'next'
+
 import { getPostPageData } from '@/api'
 
 import CustomMDX from '@/components/mdx/custom-mdx'
 import { Clock, Tag } from 'lucide-react'
+
+type GenerateMetaDataProps = {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
+export async function generateMetadata(
+  { params, searchParams }: GenerateMetaDataProps,
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  // read route params
+  const { slug: id } = params
+ 
+  // fetch data
+  const page = await getPostPageData(id)
+ 
+  // optionally access and extend (rather than replace) parent metadata
+  // const previousImages = (await parent).openGraph?.images || []
+ 
+  return {
+    title: page.title,
+    // openGraph: {
+    //   images: ['/some-specific-page-image.jpg', ...previousImages],
+    // },
+  }
+}
 
 export default async function BlogPage({
   params

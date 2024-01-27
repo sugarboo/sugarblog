@@ -1,9 +1,15 @@
+import type { Metadata } from 'next'
+
 import { getPostListData } from '@/api'
 
 import { cn } from '@/lib/utils'
 
 import SearchBar from '@/components/base/search-bar'
 import PostListItem from '@/components/base/post-list-item'
+
+export const metadata: Metadata = {
+  title: 'Blog'
+}
 
 export default async function BlogPage({
   searchParams,
