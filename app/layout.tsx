@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils'
 import './globals.css'
 
 import { ThemeProvider } from '@/components/providers/theme-provider'
+import ProgressBar from '@/components/base/progress-bar'
 import NavigationBar from '@/components/base/navigation-bar'
 
 const fontSans = FontSans({
@@ -36,6 +37,7 @@ export default function RootLayout({
           disableTransitionOnChange
           storageKey="color-theme"
         >
+          <ProgressBar />
           <nav className='sticky top-0 md:py-2 bg-background z-50'>
             <NavigationBar />
           </nav>

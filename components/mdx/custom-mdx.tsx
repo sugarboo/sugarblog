@@ -1,11 +1,12 @@
 import { MDXRemote, type MDXRemoteProps } from 'next-mdx-remote/rsc'
 import { type MDXComponents } from 'mdx/types'
 
-import MDXParagraph from './paragraph'
 import MDXHeading from './heading'
-import MDXOrderList from './order-list'
-import MDXCode from './code'
 import MDXLink from './a-link'
+import MDXParagraph from './paragraph'
+import MDXOrderList from './order-list'
+import MDXUnorderedList from './unordered-list'
+import MDXCode from './code'
 
 const CustomMDX = async (props: MDXRemoteProps) => {
 
@@ -19,6 +20,7 @@ const CustomMDX = async (props: MDXRemoteProps) => {
     a: MDXLink,
     p: MDXParagraph,
     ol: MDXOrderList,
+    ul: MDXUnorderedList,
     // @ts-ignore: Promise<JSX.Element> error, but it still can render as expected.
     code: MDXCode,
   }
