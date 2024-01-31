@@ -7,6 +7,7 @@ import MDXParagraph from './paragraph'
 import MDXOrderList from './order-list'
 import MDXUnorderedList from './unordered-list'
 import MDXCode from './code'
+import MDXImage from './image'
 
 const CustomMDX = async (props: MDXRemoteProps) => {
 
@@ -17,6 +18,7 @@ const CustomMDX = async (props: MDXRemoteProps) => {
     h4: (props) => <MDXHeading props={props} level={4} />,
     h5: (props) => <MDXHeading props={props} level={5} />,
     h6: (props) => <MDXHeading props={props} level={6} />,
+    img: MDXImage,
     a: MDXLink,
     p: MDXParagraph,
     ol: MDXOrderList,
@@ -27,7 +29,7 @@ const CustomMDX = async (props: MDXRemoteProps) => {
 
   return (
     <>
-    {/* @ts-ignore: Promise<JSX.Element> error, but it still can render as expected. */}
+      {/* @ts-ignore: Promise<JSX.Element> error, but it still can render as expected. */}
       <MDXRemote
         {...props}
         components={{

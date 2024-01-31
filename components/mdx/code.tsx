@@ -22,7 +22,7 @@ const MDXCode = async (props: CodeProps) => {
         lang,
     })
     // emphasized text in plain element
-    : `<span class="px-2 mx-1 rounded-sm text-sky-900 dark:text-sky-500 bg-accent">${children}</span>`
+    : `<span class="px-2 mx-1 rounded-sm text-sky-700 dark:text-sky-500 bg-accent">${children}</span>`
 
   return (
     <code dangerouslySetInnerHTML={{ __html: html }} {...rest} />
