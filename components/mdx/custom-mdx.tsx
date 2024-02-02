@@ -18,6 +18,7 @@ const CustomMDX = async (props: MDXRemoteProps) => {
     h4: (props) => <MDXHeading props={props} level={4} />,
     h5: (props) => <MDXHeading props={props} level={5} />,
     h6: (props) => <MDXHeading props={props} level={6} />,
+    // @ts-ignore: [WIP]
     img: MDXImage,
     a: MDXLink,
     p: MDXParagraph,

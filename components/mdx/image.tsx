@@ -1,14 +1,15 @@
 'use client'
 
-import { ComponentPropsWithoutRef, HtmlHTMLAttributes, useState } from 'react'
+import {
+  ComponentPropsWithoutRef,
+  ImgHTMLAttributes,
+  useState
+} from 'react'
 import Image from 'next/image'
 
 import { Dialog, DialogContent, DialogTrigger } from '../ui/dialog'
 
-type ImageProps = {
-  imageClassName?: string
-  lazy?: boolean
-} & HtmlHTMLAttributes<HTMLImageElement> & ComponentPropsWithoutRef<typeof Image>
+type ImageProps = ImgHTMLAttributes<HTMLImageElement> & ComponentPropsWithoutRef<typeof Image>
 
 const MDXImage = ({
   src,
