@@ -32,7 +32,7 @@ const MDXImage = ({
           className='my-4 rounded-lg hover:cursor-pointer'
         />
       </DialogTrigger>
-      <DialogContent hideClose className='max-w-full max-h-[90vh] p-0 bg-transparent border-transparent overflow-hidden'>
+      <DialogContent hideclose className='max-w-full max-h-[90vh] p-0 bg-transparent border-transparent overflow-hidden'>
         <Image
           src={src}
           alt={alt}

@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 
-import { getPostPageData } from '@/api'
+import { getPostListData, getPostPageData } from '@/api'
 
 import CustomMDX from '@/components/mdx/custom-mdx'
 import { Clock, Tag } from 'lucide-react'
@@ -29,6 +29,13 @@ export async function generateMetadata(
     //   images: ['/some-specific-page-image.jpg', ...previousImages],
     // },
   }
+}
+
+export async function generateStaticParams() {
+  const list = await getPostListData()  
+  return list.map((item) => ({
+    slug: item.id
+  }))
 }
 
 export default async function BlogPage({
@@ -61,6 +68,7 @@ export default async function BlogPage({
       <div className='mdx-content animate-slowly-in'>
         {/* @ts-ignore: Promise<JSX.Element> error, but it still can render as expected. */}
         <CustomMDX source={page.content} />
+        <div className="w-full h-6 bg-transparent" />
       </div>
     </div>
   )
