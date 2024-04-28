@@ -31,7 +31,7 @@ const PostListItem = ({
       </span>
       <span
         className='
-          box-border max-w-[15rem] md:max-w-[32rem]
+          box-border max-w-[14rem] md:max-w-[32rem]
           border-b border-transparent group-hover:border-foreground
           truncate text-foreground/90 group-hover:text-foreground
           group-hover:transition-all group-hover:duration-300 group-hover:ease-in-out
