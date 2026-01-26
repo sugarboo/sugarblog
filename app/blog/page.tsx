@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 export default async function BlogPage({
   searchParams,
 }: {
-  searchParams?: {
+  searchParams?: Promise<{
     keyword?: string
-  },
+  }>,
 }) {
   const list = await getPostListData()
 
-  const keyword = searchParams?.keyword?.toLocaleLowerCase() || ''
+  const keyword = (await searchParams)?.keyword?.toLocaleLowerCase() || ''
   const filteredList = list.filter(({ title, tag }) => {
     if (keyword) {
       return title.toLocaleLowerCase().includes(keyword) || tag.toLocaleLowerCase().includes(keyword)

@@ -6,7 +6,7 @@ import CustomMDX from '@/components/mdx/custom-mdx'
 import { Clock, Tag } from 'lucide-react'
 
 type GenerateMetaDataProps = {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
   searchParams: { [key: string]: string | string[] | undefined }
 }
 
@@ -15,8 +15,8 @@ export async function generateMetadata(
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   // read route params
-  const { slug: id } = params
- 
+ const { slug: id } = await params
+  
   // fetch data
   const page = await getPostPageData(id)
  
@@ -41,11 +41,11 @@ export async function generateStaticParams() {
 export default async function BlogPage({
   params
 }: {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }) {
-  const { slug: id } = params
+  const { slug: id } = await params
 
   const page = await getPostPageData(id)
 
