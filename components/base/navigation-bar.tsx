@@ -52,7 +52,7 @@ const NavigationBar = () => {
             <Button
               variant='ghost'
               className={cn(
-                'w-10 md:w-[4.5rem] rounded-full outline-none',
+                'w-10 md:w-18 rounded-full outline-hidden',
                 isNavigationActive(item.href) ? 'bg-accent' : ''
               )}
             >

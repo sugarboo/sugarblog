@@ -52,7 +52,7 @@ const SearchBar = ({
         className='
           w-full h-8 px-12 rounded-full
           text-sm text-foreground/80 bg-accent
-          focus:outline-none
+          focus:outline-hidden
         '
         onChange={(e) => handleSearch(e.target.value)}
       />
