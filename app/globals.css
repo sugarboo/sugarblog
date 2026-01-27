@@ -78,6 +78,25 @@
   }
 }
 
-::selection {
-  background-color: #8884;
+/* View Transition for theme switching */
+::view-transition-old(root),
+::view-transition-new(root) {
+  /* animation: none; */
+  mix-blend-mode: normal;
+}
+
+/* Light to Dark: new view on top */
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* Dark to Light: old view on top (reverse the animation) */
+:root.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+:root.dark::view-transition-new(root) {
+  z-index: 1;
 }

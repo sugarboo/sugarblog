@@ -37,14 +37,13 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
           storageKey="color-theme"
         >
           <ProgressBar />
           <nav className='sticky top-0 md:py-2 bg-background z-50'>
             <NavigationBar />
           </nav>
-          <main className='max-w-[768px] m-auto'>
+          <main className='max-w-[768px] min-h-[calc(100dvh-3.5rem)] m-auto'>
             {children}
           </main>
         </ThemeProvider>
