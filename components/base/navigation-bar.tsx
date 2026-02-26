@@ -50,10 +50,9 @@ const NavigationBar = () => {
         {navigationList.map((item) => (
           <Link key={item.href} href={item.href}>
             <Button
-              variant='ghost'
               className={cn(
-                'w-10 md:w-18 rounded-full outline-hidden',
-                isNavigationActive(item.href) ? 'bg-accent' : ''
+                'w-10 md:w-18 rounded-full text-muted-foreground bg-linear-to-br backdrop-blur-3xl saturate-150 outline-hidden cursor-pointer hover:bg-transparent hover:from-pink-50 hover:via-purple-50 hover:to-cyan-50 dark:hover:from-pink-950 dark:hover:via-purple-950 dark:hover:to-cyan-950',
+                isNavigationActive(item.href) ? 'cursor-auto text-shadow-foreground from-pink-50 via-purple-50 to-cyan-50 dark:from-pink-950 dark:via-purple-950 dark:to-cyan-950' : ''
               )}
             >
               <span className='md:hidden block'>

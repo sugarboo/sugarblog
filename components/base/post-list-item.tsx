@@ -1,4 +1,5 @@
 import type { Post } from '@/types/post'
+import { Clock, Tag } from 'lucide-react'
 
 import Link from 'next/link'
 
@@ -8,55 +9,24 @@ const PostListItem = ({
   post: Post
 }) => {
   return (
-    <Link
-      // [WIP]: Finding a solution to pass `post.id` without showing it in URL 😵
-      // href={`/blog/${post.post}`} 
-      href={`/blog/${post.id}`}
-      key={post.id}
-      className='
-        group flex items-center gap-1 md:gap-4
-        mx-2 my-4
-        animate-slowly-in transition-all duration-300 ease-in-out
-        select-none
-      '
-    >
-      <span
-        className='
-          h-4 w-12 rounded-sm scale-[0.8] md:scale-100
-          text-center text-xs text-foreground/30 bg-foreground/10 group-hover:text-foreground/40 group-hover:bg-foreground/20
-          group-hover:transition-all group-hover:duration-300 group-hover:ease-in-out
-        '
-      >
-        {post.tag}
-      </span>
-      <span
-        className='
-          box-border max-w-56 md:max-w-lg
-          border-b border-transparent group-hover:border-foreground
-          truncate text-foreground/90 group-hover:text-foreground
-          group-hover:transition-all group-hover:duration-300 group-hover:ease-in-out
-        '
-      >
-        {post.title}
-      </span>
-      <span
-        className='
-          hidden md:inline-block
-          text-xs text-foreground/30 group-hover:text-foreground/40
-          group-hover:transition-all group-hover:duration-300 group-hover:ease-in-out
-        '
-      >
-        - {post.createdTimeTxt}
-      </span>
-      <span
-        className='
-          inline-block md:hidden
-          text-xs text-foreground/30 group-hover:text-foreground/40
-          group-hover:transition-all group-hover:duration-300 group-hover:ease-in-out
-        '
-      >
-        - {post.createdTimeTxt.split(',')[0]}
-      </span>
+    <Link key={post.id} href={`/blog/${post.id}`}>
+      <article className="group p-4 -mx-4 rounded-xl hover:bg-accent/50 transition-all duration-300">
+        <h3 className="font-medium mb-2 group-hover:text-foreground transition-colors">
+          {post.title || post.post}
+        </h3>
+        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+          <span className="flex items-center gap-1">
+            <Clock size={13} />
+            {post.createdTimeTxt}
+          </span>
+          {post.tag && (
+            <span className="flex items-center gap-1">
+              <Tag size={13} />
+              {post.tag}
+            </span>
+          )}
+        </div>
+      </article>
     </Link>
   )
 }

@@ -60,9 +60,8 @@ export function ToggleTheme() {
 
   return (
     <Button
-      variant="ghost"
       size="icon"
-      className="rounded-full outline-hidden"
+      className="rounded-full outline-hidden text-muted-foreground cursor-pointer bg-linear-to-br backdrop-blur-3xl saturate-150 hover:bg-transparent hover:from-pink-50 hover:via-purple-50 hover:to-cyan-50 dark:hover:from-pink-950 dark:hover:via-purple-950 dark:hover:to-cyan-950"
       onClick={(event) => toggleTheme(event)}
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />

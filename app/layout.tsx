@@ -40,10 +40,10 @@ export default function RootLayout({
           storageKey="color-theme"
         >
           <ProgressBar />
-          <nav className='sticky top-0 md:py-2 bg-background z-50'>
+          <nav className='sticky top-0 md:py-2 bg-background/60 backdrop-blur-xl backdrop-saturate-150 border-b border-border/10 z-50'>
             <NavigationBar />
           </nav>
-          <main className='max-w-[768px] min-h-[calc(100dvh-3.5rem)] m-auto'>
+          <main className='max-w-3xl min-h-[calc(100dvh-3.5rem)] m-auto'>
             {children}
           </main>
         </ThemeProvider>
