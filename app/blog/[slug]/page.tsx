@@ -3,6 +3,8 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import { getPostListData, getPostPageData } from '@/api'
 
 import CustomMDX from '@/components/mdx/custom-mdx'
+import TableOfContents from '@/components/mdx/table-of-contents'
+import { extractTocFromContent } from '@/utils/toc'
 import { Clock, Tag } from 'lucide-react'
 
 type GenerateMetaDataProps = {
@@ -49,6 +51,9 @@ export default async function BlogPage({
 
   const page = await getPostPageData(id)
 
+  // Extract TOC from raw markdown content
+  const tocItems = extractTocFromContent(page.content || '')
+
   return (
     <div className='p-4'>
       <div className='flex flex-col mb-8'>
@@ -64,6 +69,9 @@ export default async function BlogPage({
           </span>
         </div>
       </div>
+
+      {/* Table of Contents */}
+      <TableOfContents items={tocItems} />
 
       <div className='mdx-content animate-slowly-in'>
         {/* @ts-ignore: Promise<JSX.Element> error, but it still can render as expected. */}
