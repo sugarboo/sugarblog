@@ -13,6 +13,7 @@ import {
 
 export const metadata: Metadata = {
   title: 'About',
+  description: 'Learn more about sugarboo — a frontend developer focused on Vue.js, React, and modern web technologies.',
 }
 
 /* ── Data ── */

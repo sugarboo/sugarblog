@@ -8,7 +8,8 @@ import SearchBar from '@/components/base/search-bar'
 import PostListItem from '@/components/base/post-list-item'
 
 export const metadata: Metadata = {
-  title: 'Blog'
+  title: 'Blog',
+  description: 'Articles about frontend development, Vue.js, React, TypeScript, and web technologies.',
 }
 
 export default async function BlogPage({

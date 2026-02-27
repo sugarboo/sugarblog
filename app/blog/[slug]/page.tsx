@@ -1,6 +1,7 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 
 import { getPostListData, getPostPageData } from '@/api'
+import { siteConfig } from '@/lib/site-config'
 
 import CustomMDX from '@/components/mdx/custom-mdx'
 import TableOfContents from '@/components/mdx/table-of-contents'
@@ -16,20 +17,34 @@ export async function generateMetadata(
   { params, searchParams }: GenerateMetaDataProps,
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
-  // read route params
- const { slug: id } = await params
-  
-  // fetch data
+  const { slug: id } = await params
   const page = await getPostPageData(id)
- 
-  // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || []
- 
+
+  // Generate description from content (first 160 chars, stripped of markdown)
+  const description = (page.content || '')
+    .replace(/[#*`\[\]()>_~-]/g, '')
+    .replace(/\n+/g, ' ')
+    .trim()
+    .slice(0, 160)
+
   return {
     title: page.title,
-    // openGraph: {
-    //   images: ['/some-specific-page-image.jpg', ...previousImages],
-    // },
+    description,
+    openGraph: {
+      type: 'article',
+      title: page.title,
+      description,
+      url: `${siteConfig.url}/blog/${id}`,
+      siteName: siteConfig.name,
+      locale: 'zh_CN',
+      publishedTime: page.createdTimeTxt,
+      tags: page.tag ? [page.tag] : [],
+    },
+    twitter: {
+      card: 'summary',
+      title: page.title,
+      description,
+    },
   }
 }
 
