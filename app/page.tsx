@@ -5,12 +5,11 @@ import {
   Mail,
   ArrowDown,
   ArrowRight,
-  Clock,
-  Tag,
 } from 'lucide-react'
 
 import { getPostListData } from '@/api'
 import HeroBackground from '@/components/home/hero-background'
+import PostListItem from '@/components/base/post-list-item'
 
 export default async function Home() {
   const posts = await getPostListData()
@@ -115,6 +114,7 @@ export default async function Home() {
               'React',
               'Next.js',
               'Node.js',
+              'ArkTS',
             ].map((tech) => (
               <span
                 key={tech}
@@ -150,25 +150,7 @@ export default async function Home() {
 
         <div className="flex flex-col gap-1">
           {latestPosts.map((post) => (
-            <Link key={post.id} href={`/blog/${post.id}`}>
-              <article className="group p-4 -mx-4 rounded-xl hover:bg-accent/50 transition-all duration-300">
-                <h3 className="font-medium mb-2 group-hover:text-foreground transition-colors">
-                  {post.title || post.post}
-                </h3>
-                <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                  <span className="flex items-center gap-1">
-                    <Clock size={13} />
-                    {post.createdTimeTxt}
-                  </span>
-                  {post.tag && (
-                    <span className="flex items-center gap-1">
-                      <Tag size={13} />
-                      {post.tag}
-                    </span>
-                  )}
-                </div>
-              </article>
-            </Link>
+            <PostListItem key={post.id} post={post} />
           ))}
         </div>
 
@@ -178,11 +160,6 @@ export default async function Home() {
           </p>
         )}
       </section>
-
-      {/* ── Footer ── */}
-      <footer className="py-8 px-4 text-center text-sm text-muted-foreground/40 border-t border-border/20">
-        <p>© {new Date().getFullYear()} sugarboo · Built with Next.js</p>
-      </footer>
     </>
   )
 }

@@ -8,6 +8,7 @@ import './globals.css'
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import ProgressBar from '@/components/base/progress-bar'
 import NavigationBar from '@/components/base/navigation-bar'
+import Footer from '@/components/base/footer'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -40,12 +41,13 @@ export default function RootLayout({
           storageKey="color-theme"
         >
           <ProgressBar />
-          <nav className='sticky top-0 md:py-2 bg-background/60 backdrop-blur-xl backdrop-saturate-150 border-b border-border/10 z-50'>
+          <nav className='sticky top-0 md:py-2 bg-transparent z-50 backdrop-blur-2xl backdrop-saturate-200'>
             <NavigationBar />
           </nav>
           <main className='max-w-3xl min-h-[calc(100dvh-3.5rem)] m-auto'>
             {children}
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
