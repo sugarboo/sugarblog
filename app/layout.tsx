@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
+import { Suspense } from 'react'
 
 import { cn } from '@/lib/utils'
 import { siteConfig } from '@/lib/site-config'
@@ -70,7 +71,9 @@ export default function RootLayout({
           enableSystem
           storageKey="color-theme"
         >
-          <ProgressBar />
+          <Suspense fallback={null}>
+            <ProgressBar />
+          </Suspense>
           <nav className='sticky top-0 md:py-2 bg-transparent z-50 backdrop-blur-2xl backdrop-saturate-200'>
             <NavigationBar />
           </nav>
