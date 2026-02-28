@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense } from 'react' // 1. 引入 Suspense
+import dynamic from 'next/dynamic'
 import {
   usePathname,
   useRouter,
@@ -8,10 +8,9 @@ import {
 } from 'next/navigation'
 
 import { useDebouncedCallback } from 'use-debounce'
-
 import { Search } from 'lucide-react'
 
-const SearchBarContent = ({
+const SearchBarCore = ({
   pageable = false
 }: {
   pageable?: boolean
@@ -61,16 +60,15 @@ const SearchBarContent = ({
   )
 }
 
-const SearchBar = ({
-  pageable = false
-}: {
-  pageable?: boolean
-}) => {
-  return (
-    <Suspense fallback={<div className="h-8 mb-8 px-2 relative w-full opacity-50">Loading...</div>}>
-      <SearchBarContent pageable={pageable} />
-    </Suspense>
-  )
-}
+const SearchBarFallback = () => (
+  <div className="h-8 mb-8 px-2 relative w-full opacity-50 flex items-center pl-12 text-sm text-foreground/30 bg-accent rounded-full">
+    Loading...
+  </div>
+)
+
+const SearchBar = dynamic(() => Promise.resolve(SearchBarCore), {
+  ssr: false,
+  loading: SearchBarFallback
+})
  
 export default SearchBar
