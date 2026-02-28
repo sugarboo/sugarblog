@@ -1,5 +1,6 @@
 'use client'
 
+import { Suspense } from 'react' // 1. 引入 Suspense
 import {
   usePathname,
   useRouter,
@@ -10,10 +11,10 @@ import { useDebouncedCallback } from 'use-debounce'
 
 import { Search } from 'lucide-react'
 
-const SearchBar = ({
+const SearchBarContent = ({
   pageable = false
 }: {
-  pageable?: false
+  pageable?: boolean
 }) => {
   const searchParams = useSearchParams()
   const pathname = usePathname()
@@ -47,7 +48,7 @@ const SearchBar = ({
         '
       />
       <input
-        defaultValue={searchParams.get('keyword')?.toString()}
+        defaultValue={searchParams.get('keyword')?.toString() || ''}
         type="text"
         className='
           w-full h-8 px-12 rounded-full
@@ -57,6 +58,18 @@ const SearchBar = ({
         onChange={(e) => handleSearch(e.target.value)}
       />
     </div>
+  )
+}
+
+const SearchBar = ({
+  pageable = false
+}: {
+  pageable?: boolean
+}) => {
+  return (
+    <Suspense fallback={<div className="h-8 mb-8 px-2 relative w-full opacity-50">Loading...</div>}>
+      <SearchBarContent pageable={pageable} />
+    </Suspense>
   )
 }
  
