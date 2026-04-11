@@ -8,7 +8,7 @@ import {
 } from 'lucide-react'
 
 import { getPostListData } from '@/api'
-import HeroBackground from '@/components/home/hero-background'
+// import HeroBackground from '@/components/home/hero-background'
 import PostListItem from '@/components/base/post-list-item'
 
 export default async function Home() {
@@ -17,7 +17,7 @@ export default async function Home() {
 
   return (
     <>
-      <HeroBackground />
+      {/* <HeroBackground /> */}
 
       {/* ── Hero Section ── */}
       <section className="min-h-[calc(100dvh-3.5rem)] flex flex-col justify-center items-center px-4 relative">

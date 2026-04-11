@@ -11,6 +11,7 @@ import { ThemeProvider } from '@/components/providers/theme-provider'
 import ProgressBar from '@/components/base/progress-bar'
 import NavigationBar from '@/components/base/navigation-bar'
 import Footer from '@/components/base/footer'
+import HeroBackground from '@/components/base/hero-background'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -71,6 +72,7 @@ export default function RootLayout({
           enableSystem
           storageKey="color-theme"
         >
+          <HeroBackground />
           <Suspense fallback={null}>
             <ProgressBar />
           </Suspense>

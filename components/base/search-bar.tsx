@@ -51,7 +51,7 @@ const SearchBarCore = ({
         type="text"
         className='
           w-full h-8 px-12 rounded-full
-          text-sm text-foreground/80 bg-accent
+          text-sm text-foreground/80 bg-[rgba(255,255,255,0.12)] dark:bg-[rgba(255,255,255,0.05)] backdrop-blur border border-white/40 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,.08),inset_0_1px_2px_rgba(255,255,255,.6),inset_0_-1px_2px_rgba(0,0,0,.08)]
           focus:outline-hidden
         '
         onChange={(e) => handleSearch(e.target.value)}
@@ -61,7 +61,7 @@ const SearchBarCore = ({
 }
 
 const SearchBarFallback = () => (
-  <div className="h-8 mb-8 px-2 relative w-full opacity-50 flex items-center pl-12 text-sm text-foreground/30 bg-accent rounded-full">
+  <div className="h-8 mb-8 px-2 relative w-full opacity-0 flex items-center pl-12 text-sm text-foreground/30 bg-[rgba(255,255,255,0.12)] dark:bg-[rgba(255,255,255,0.05)] backdrop-blur border border-white/40 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,.08),inset_0_1px_2px_rgba(255,255,255,.6),inset_0_-1px_2px_rgba(0,0,0,.08)] rounded-full">
     Loading...
   </div>
 )
